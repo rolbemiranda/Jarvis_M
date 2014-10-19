@@ -7,6 +7,7 @@ import com.thoughtworks.selenium.SeleniumException;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
+import junit.framework.Test;
 import org.openqa.selenium.Capabilities;
 
 import org.openqa.selenium.Dimension;
