@@ -47,12 +47,17 @@ public class BrowserFunctions {
         System.out.println("Browser closed. Scenario " + ScenarioName + " has been completed.");
     }
 
-    public void LaunchSelenium(String URL) {
+    public Selenium LaunchSelenium(String URL) {
         Selenium selenium = new DefaultSelenium("localhost", 4444, "*firefox", URL);
         selenium.start();
         selenium.windowMaximize();
         selenium.waitForPageToLoad("1000");
         assert selenium.isTextPresent("kass");
+        return selenium;
+    }
+
+    public void stopSelenium(Selenium selenium) {
+        selenium.stop();
     }
 
     public WebDriver open_browser(String OSType, String BrowserVersion,

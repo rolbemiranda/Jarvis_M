@@ -15,6 +15,7 @@
 // </editor-fold>
 package com.jarvis.app;
 
+import com.thoughtworks.selenium.Selenium;
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 
@@ -38,6 +39,7 @@ public class AppTest {
         String fPath = _GenericFunctions.GetAbsolutePath();
         scenarios = _GenericFunctions.excelRead(fPath + "/DATA/Control_File.xls");
         WebDriver wd = null;
+        Selenium wdh = null;
         String PNR = "";
         // </editor-fold>
 
@@ -64,6 +66,7 @@ public class AppTest {
             Global.OverallTestingStatus = "PASSED";
             Global.ContinueExecution = true;
             Global.MCC = "Not Available";
+
             // </editor-fold>
 
             if (RunScenario.equalsIgnoreCase("Y")) {
@@ -95,6 +98,7 @@ public class AppTest {
                     Global.ScreenshotFileName = ScreenshotFileName;
                     Global.ResultsFileName = ResultsFileName;
 
+
                     //Create Result file on start of the program
                     if (idata == 1) {
                         _GenericFunctions.CreateOutputFile(ResultsFileName);
@@ -117,7 +121,10 @@ public class AppTest {
                                     wd = _BrowserFunctions.open_browser(param1, param2, param3, param4);
                                     break;
                                 case "LAUNCHSELENIUM":
-                                    _BrowserFunctions.LaunchSelenium(param4);
+                                    wdh = _BrowserFunctions.LaunchSelenium(param4);
+                                    break;
+                                case "STOPSELENIUM":
+                                    _BrowserFunctions.stopSelenium(wdh);
                                     break;
 
                                 // <editor-fold defaultstate="collapsed" desc="SWITCH DEFAULT">
