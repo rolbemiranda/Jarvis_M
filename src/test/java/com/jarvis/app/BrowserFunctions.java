@@ -1,6 +1,9 @@
 package com.jarvis.app;
 
 //import io.appium.java_client.AppiumDriver;
+import com.thoughtworks.selenium.DefaultSelenium;
+import com.thoughtworks.selenium.Selenium;
+import com.thoughtworks.selenium.SeleniumException;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -42,6 +45,12 @@ public class BrowserFunctions {
         wd.close();
         wd.quit();
         System.out.println("Browser closed. Scenario " + ScenarioName + " has been completed.");
+    }
+
+    public void LaunchSelenium(String URL) {
+        Selenium selenium = new DefaultSelenium("localhost", 4444, "*firefox", URL);
+        selenium.start();
+        selenium.windowMaximize();
     }
 
     public WebDriver open_browser(String OSType, String BrowserVersion,

@@ -116,6 +116,10 @@ public class App {
                                 case "OPEN_BROWSER":
                                     wd = _BrowserFunctions.open_browser(param1, param2, param3, param4);
                                     break;
+                                case "LAUNCHSELENIUM":
+                                    _BrowserFunctions.LaunchSelenium(param4);
+                                    break;
+
                                 // <editor-fold defaultstate="collapsed" desc="SWITCH DEFAULT">
                                 default:
                                     System.out.println("LINE: " + idata + " - " + Keyword
