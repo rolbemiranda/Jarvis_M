@@ -51,6 +51,7 @@ public class BrowserFunctions {
         Selenium selenium = new DefaultSelenium("localhost", 4444, "*firefox", URL);
         selenium.start();
         selenium.windowMaximize();
+        assert selenium.isTextPresent("kass");
     }
 
     public WebDriver open_browser(String OSType, String BrowserVersion,
