@@ -10,6 +10,7 @@ import java.net.URL;
 import junit.framework.Test;
 import org.openqa.selenium.Capabilities;
 
+
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Platform;
